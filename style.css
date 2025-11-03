@@ -1,0 +1,134 @@
+:root {
+    /* tamaños */
+    --space-1: .25rem;
+    --space-2: .5rem;
+    --space-3: .75rem;
+    --space-4: 1rem;
+    --space-5: 4rem;
+    --space-6: 10rem;
+    --space-7: 20rem;
+
+    /* colores */
+    --naranja: #ff8000;
+    --azul: #47c7fc;
+    --negro: #000000;
+    --gris: #808080;
+    --blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(45deg, rgba(142, 197, 252, 1.000) 0.000%, rgba(141, 211, 255, 1.000) 25.000%, rgba(161, 216, 255, 1.000) 50.000%, rgba(193, 210, 255, 1.000) 75.000%, rgba(224, 195, 255, 1.000) 100.000%)
+}
+
+.calculadora {
+    width: var(--space-7);
+
+    padding: var(--space-4) var(--space-3);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+
+    border-radius: var(--space-1);
+
+    background-color: var(--blanco);
+
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 7px 4px;
+}
+
+.pantalla {
+    height: var(--space-5);
+    width: calc((var(--space-5) * 4) + calc(var(--space-2) * 2) - var(--space-5));
+
+    padding: 0 var(--space-1);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: var(--space-1);
+
+    box-shadow:
+        rgb(204, 219, 232) 3px 3px 6px 2px inset,
+        rgba(255, 255, 255, 0.5) -3px -3px 6px 2px inset;
+
+    font-family: "Momo Trust Display", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--space-5);
+}
+
+.teclado {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.linea {
+    height: var(--space-5);
+
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-2);
+}
+
+.boton,
+.boton-operacion {
+    height: var(--space-5);
+    width: var(--space-5);
+
+    text-align: center;
+
+    border: none;
+    border-radius: var(--space-1);
+
+    box-shadow: var(--negro) 2px 2px 3px;
+
+    font-family: "Momo Trust Display", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(var(--space-4) * 2);
+
+    transition: box-shadow .2s ease-out, filter .5s ease-out;
+
+    cursor: pointer;
+}
+
+.boton {
+    color: var(--negro);
+    background-color: var(--naranja);
+}
+
+.boton-operacion {
+    color: var(--negro);
+    background-color: var(--azul);
+}
+
+.boton:active,
+.boton-operacion:active {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px;
+}
+
+.boton:hover {
+    filter: brightness(1.5);
+}
+
+.boton-operacion:hover {
+    filter: brightness(1.2);
+}
